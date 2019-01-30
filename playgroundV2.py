@@ -9,7 +9,7 @@ BLOCK_SIZE = 15
 r_val = 100
 g_val = 100
 b_val = 100
-# Uppercase names are for constants.
+
 WHITE = pygame.Color('white')
 BLACK = pygame.Color('black')
 FONT = pygame.font.Font(None, 25)
@@ -18,11 +18,9 @@ displaysurf = pygame.display.set_mode((600, 600))
 # This allows you to hold a key and after 200 ms the
 # same event is emitted every 50 ms.
 pygame.key.set_repeat(200, 50)
-# A clock is useful to limit the frame rate.
+
 clock = pygame.time.Clock()
 running = True
-# I replaced colUp colDown with this variable. Just set it
-# to the desired value and then increment the rgb values.
 col_change = 5
 
 
@@ -65,7 +63,7 @@ while running:
                 g_val += col_change
                 g_val = clamp(g_val, 0, 255)
             elif event.key == pygame.K_b:
-                # Increment and clamp in one line.
+                # Increment and clamp
                 b_val = clamp(b_val+col_change, 0, 255)
             drawColorValues()
 
